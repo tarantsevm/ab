@@ -1,0 +1,20 @@
+diff --git a/src/main.c b/src/main.c
+index d1ebd7b..3621f22 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -31,6 +31,7 @@
+ 
+ #include "build-ident.h"
+ #include "editor-application-private.h"
++#include "editor-ab_proofread.h"
+ 
+ static void
+ check_early_opts (int        *argc,
+@@ -94,6 +95,7 @@ main (int   argc,
+   check_early_opts (&argc, &argv, &standalone, &exit_after_startup);
+ 
+   app = _editor_application_new (standalone);
++  g_signal_connect (app, "startup", G_CALLBACK (ab_proofread_startup), NULL);
+ 
+   if (exit_after_startup)
+     g_signal_connect_after (app,
