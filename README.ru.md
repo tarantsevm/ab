@@ -24,11 +24,27 @@
 
 ## Установка, обновление и удаление
 
-Для GNOME Shell 50 / Wayland. Сборка из исходников не нужна. Скачайте нужный скрипт и запустите его обычным пользователем из папки загрузок:
+Для GNOME Shell 50 / Wayland. Выполните нужную команду в терминале обычным пользователем, без `sudo` перед `curl` или `bash`. Вручную скачивать файлы или собирать пакеты не нужно.
 
-- [Установка](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/install-ab.sh) — `sh ./install-ab.sh`.
-- [Обновление](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/update-ab.sh) — `sh ./update-ab.sh`. Уже установленный движок той же версии не скачивается заново.
-- [Удаление](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/remove-ab.sh) — `sh ./remove-ab.sh`. Скрипт выключает расширение в текущем сеансе и удаляет только пакеты ab и его движка.
+### Установка
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/install.sh | bash
+```
+
+### Обновление
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/update.sh | bash
+```
+
+### Удаление
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/remove.sh | bash
+```
+
+Обновление не скачивает движок заново, если уже установлена нужная версия. Удаление отключает расширение в текущем сеансе GNOME и удаляет пакеты ab и его движка.
 
 Скрипты скачивают готовые пакеты и сверяют SHA-256 до вызова `apt`. После установки включите **ab** в «Расширениях» GNOME. Если расширение не обнаружилось или после обновления остался старый код, выйдите из сеанса и войдите снова.
 

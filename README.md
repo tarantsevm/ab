@@ -25,11 +25,27 @@ Real GNOME test session with the stock editor: selection icon, correction previe
 
 ## Install, update and remove
 
-For GNOME Shell 50 / Wayland. Download and run the desired script as your normal user:
+For GNOME Shell 50 / Wayland. Run the desired command in a terminal as your normal user; do not put `sudo` before `curl` or `bash`. No manual download or build is needed.
 
-- [Install](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/install-ab.sh): `sh ./install-ab.sh`
-- [Update](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/update-ab.sh): `sh ./update-ab.sh`
-- [Remove](https://github.com/tarantsevm/ab/releases/download/v0.1.0-dev7/remove-ab.sh): `sh ./remove-ab.sh`
+### Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/install.sh | bash
+```
+
+### Update
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/update.sh | bash
+```
+
+### Remove
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/remove.sh | bash
+```
+
+Update reuses the installed engine if it matches the release. Remove disables the extension in the current GNOME session and removes the ab and engine packages.
 
 Install and update verify the prebuilt Debian packages before calling apt. Enable **ab** in GNOME Extensions after installation. Log out and back in if the extension isn't discovered or updated. [Packages and checksums](https://github.com/tarantsevm/ab/releases/tag/v0.1.0-dev7).
 
