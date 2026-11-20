@@ -47,7 +47,7 @@ curl -fsSL https://raw.githubusercontent.com/tarantsevm/ab/main/remove.sh | bash
 
 Update reuses the installed engine if it matches the release. Remove disables the extension in the current GNOME session and removes the ab and engine packages.
 
-Install and update verify the prebuilt Debian packages before calling apt. Enable **ab** in GNOME Extensions after installation. Log out and back in if the extension isn't discovered or updated. [Packages and checksums](https://github.com/tarantsevm/ab/releases/tag/v0.1.0-dev7).
+Install and update show download progress and verify the prebuilt Debian packages before calling apt. The first install also downloads LanguageTool (254 MB). Enable **ab** in GNOME Extensions after installation. Log out and back in if the extension isn't discovered or updated. [Packages and checksums](https://github.com/tarantsevm/ab/releases/tag/v0.1.0-dev7).
 
 ## Build from source (optional)
 
