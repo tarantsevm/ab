@@ -1,0 +1,7 @@
+{
+  "uuid": "ab_proofread@ab.local",
+  "name": "ab",
+  "description": "Show a contextual button to check selected text locally.",
+  "version": 1,
+  "shell-version": ["50"]
+}

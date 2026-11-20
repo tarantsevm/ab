@@ -1,0 +1,16 @@
+name: Test and package
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-atspi-2.0 xvfb xauth dbus-x11
+      - run: node --test tests/*.test.mjs
+      - run: /usr/bin/python3 packaging/build_deb.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ab-proofread-development-deb
+          path: dist/*.deb
